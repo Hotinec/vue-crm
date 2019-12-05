@@ -1,6 +1,5 @@
 <template lang="pug">
   .app-main-layout
-    
     nav(class="navbar orange lighten-1")
       .nav-wrapper
         .navbar-left
@@ -22,8 +21,7 @@
                   class="black-text"
                 )
                   i(class="material-icons") assignment_return
-                  Выйти
-    
+                  span Выйти
     ul(class="sidenav app-sidenav open")
       each item in ['Счет', 'История', 'Планирование', 'Новая запись', 'Категории']
         li
@@ -31,11 +29,9 @@
             href="#"
             class="waves-effect waves-orange pointer"
           )= item
-    
     main.app-content
       .app-page
         router-view
-
     .fixed-action-btn
       a(
         class="btn-floating btn-large blue"
