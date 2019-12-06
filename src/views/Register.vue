@@ -6,7 +6,6 @@
         input(
           id="email"
           type="text"
-          class="validate"
         )
         label(for="email") Email
         small(class="helper-text invalid") Email
@@ -16,13 +15,19 @@
           type="password"
           class="validate"
         )
-        label(for="password") Пароль
-        small(class="helper-text invalid") Password
+        label(for="name") Имя
+        small(class="helper-text invalid") Name
+      p
+        label
+          input(type="checkbox")
+          span С правилами согласен
     .card-action
       div
-        button(class="btn waves-effect waves-light auth-submit" type="submit") Войти
+        button(
+          class="btn waves-effect waves-light auth-submit"
+          type="submit"
+        ) Зарегистрироваться
           i(class="material-icons right") send
-      p.center
-        span Нет аккаунта?
-        a(href="/") Зарегистрироваться
+      p.center Уже есть аккаунт?
+        a(href="/") Войти!
 </template>

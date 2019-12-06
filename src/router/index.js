@@ -8,6 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    meta: { layout: 'main' },
     component: Home
   },
   {
@@ -27,6 +28,36 @@ const routes = [
     name: 'detailRecord',
     meta: { layout: 'main' },
     component: () => import('../views/DetailRecord.vue')
+  },
+  {
+    path: '/history',
+    name: 'history',
+    meta: { layout: 'main' },
+    component: () => import('../views/History.vue')
+  },
+  {
+    path: '/planning',
+    name: 'planning',
+    meta: { layout: 'main' },
+    component: () => import('../views/Planning.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    meta: { layout: 'main' },
+    component: () => import('../views/Proile.vue')
+  },
+  {
+    path: '/record',
+    name: 'record',
+    meta: { layout: 'main' },
+    component: () => import('../views/Record.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    meta: { layout: 'empty' },
+    component: () => import('../views/Register.vue')
   }
 ]
 

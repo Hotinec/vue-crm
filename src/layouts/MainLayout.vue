@@ -5,7 +5,7 @@
         .navbar-left
           a(href="#")
             i(class="material-icons black-text") dehaze
-            span.black-text 12.12.12
+          span.black-text 12.12.12
         ul(class="right hide-on-small-and-down")
           li
             a(
