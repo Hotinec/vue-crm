@@ -1,35 +1,8 @@
 <template lang="pug">
   .app-main-layout
-    nav(class="navbar orange lighten-1")
-      .nav-wrapper
-        .navbar-left
-          a(href="#")
-            i(class="material-icons black-text") dehaze
-          span.black-text 12.12.12
-        ul(class="right hide-on-small-and-down")
-          li
-            a(
-              href="#"
-              class="dropdown-trigger black-text"
-              data-target="dropdown"
-            ) USER NAME
-              i(class="material-icons right") arrow_drop_down
-            ul.dropdown-content#dropdown
-              li
-                a(
-                  href="#"
-                  class="black-text"
-                )
-                  i(class="material-icons") assignment_return
-                  span Выйти
-    ul(class="sidenav app-sidenav open")
-      each item in ['Счет', 'История', 'Планирование', 'Новая запись', 'Категории']
-        li
-          a(
-            href="#"
-            class="waves-effect waves-orange pointer"
-          )= item
-    main.app-content
+    Navbar(@togle='isOpen = !isOpen')
+    Sidebar(v-model="isOpen")
+    main.app-content(:class="{full: !isOpen}")
       .app-page
         router-view
     .fixed-action-btn
@@ -39,3 +12,15 @@
       )
         i(class="large material-icons") add
 </template>
+
+<script>
+import Navbar from '@/components/app/Navbar.vue'
+import Sidebar from '@/components/app/SideBar.vue'
+
+export default {
+  data: () => ({
+    isOpen: true
+  }),
+  components: { Navbar, Sidebar }
+}
+</script>
