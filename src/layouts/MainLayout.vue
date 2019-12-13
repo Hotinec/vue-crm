@@ -6,9 +6,9 @@
       .app-page
         router-view
     .fixed-action-btn
-      a(
+      router-link(
         class="btn-floating btn-large blue"
-        href="#"
+        to='/record'
       )
         i(class="large material-icons") add
 </template>

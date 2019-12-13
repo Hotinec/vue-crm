@@ -25,3 +25,11 @@
                 i(class="material-icons") assignment_return
                 span Выйти
 </template>
+
+<script>
+export default {
+  mounted () {
+
+  }
+}
+</script>
