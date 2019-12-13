@@ -8,7 +8,8 @@
     .fixed-action-btn
       router-link(
         class="btn-floating btn-large blue"
-        to='/record'
+        to="/record"
+        cursor="pointer"
       )
         i(class="large material-icons") add
 </template>
