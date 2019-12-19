@@ -73,22 +73,26 @@ export default {
   }),
   validations: {
     email: { email, required },
-    password: { required, minLentgh: minLength(6) },
+    password: { required, minLength: minLength(6) },
     name: { required },
     agree: { checked: v => v }
   },
   methods: {
-    submitHandler () {
+    async submitHandler () {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
       }
-      // const formData = {
-      //   email: this.email,
-      //   name: this.name,
-      //   password: this.password
-      // }
-      this.$router.push('/')
+      const formData = {
+        email: this.email,
+        name: this.name,
+        password: this.password
+      }
+      try {
+        await this.$store.dispatch('register', formData)
+        this.$router.push('/')
+      } catch (error) {
+      }
     }
   }
 }
