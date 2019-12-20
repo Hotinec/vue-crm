@@ -45,10 +45,10 @@
         small(
           class="helper-text invalid"
           v-if="$v.password.$dirty && !$v.password.minLength"
-        ) Password need to have {{$v.password.$params.minLentgh.min}} simbols. Now it is {{password.length}}
+        ) Password need to have {{$v.password.$params.minLength.min}} simbols. Now it is {{password.length}}
       p
         label
-          input(type="checkbox")
+          input(type="checkbox"  v-model="agree")
           span С правилами согласен
     .card-action
       div
@@ -80,6 +80,7 @@ export default {
   methods: {
     async submitHandler () {
       if (this.$v.$invalid) {
+        console.log('invalid')
         this.$v.$touch()
         return
       }
@@ -89,6 +90,7 @@ export default {
         password: this.password
       }
       try {
+        console.log(formData.email)
         await this.$store.dispatch('register', formData)
         this.$router.push('/')
       } catch (error) {

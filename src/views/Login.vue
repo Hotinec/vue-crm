@@ -36,7 +36,7 @@
         small(
           class="helper-text invalid"
           v-if="$v.password.$dirty && !$v.password.minLength"
-        ) Password need to have {{$v.password.$params.minLentgh.min}} simbols. Now it is {{password.length}}
+        ) Password need to have {{$v.password.$params.minLength.min}} simbols. Now it is {{password.length}}
     .card-action
       div
         button(class="btn waves-effect waves-light auth-submit" type="submit") Войти
@@ -58,7 +58,7 @@ export default {
   }),
   validations: {
     email: { email, required },
-    password: { required, minLentgh: minLength(6) }
+    password: { required, minLength: minLength(6) }
   },
   methods: {
     async submitHandler () {
@@ -75,7 +75,6 @@ export default {
         await this.$store.dispatch('login', formData)
         this.$router.push('/')
       } catch (e) {
-        alert(e)
       }
     }
   },
